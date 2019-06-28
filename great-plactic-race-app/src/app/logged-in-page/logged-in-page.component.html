@@ -1,2 +1,2 @@
-<app-scanner ></app-scanner>
-<app-product-list></app-product-list>
+<app-scanner (itemAdded)="triggerItemAdded($event)"></app-scanner>
+<app-product-list [itemList]="itemList" [companyTotalWeight]="companyTotalWeight" [totalWeight]="totalWeight"></app-product-list>

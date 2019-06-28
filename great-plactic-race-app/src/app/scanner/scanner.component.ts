@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 import { RestService } from '../rest.service';
 
 @Component({
@@ -7,6 +7,8 @@ import { RestService } from '../rest.service';
   styleUrls: ['./scanner.component.css']
 })
 export class ScannerComponent implements OnInit {
+  @Output() itemAdded: EventEmitter<any> = new EventEmitter();
+
   constructor(private restService: RestService) {}
   ngOnInit() {
   }
@@ -14,9 +16,11 @@ export class ScannerComponent implements OnInit {
     this.restService.getProductInformation(upcCode)
     .subscribe(
       data=> {
-        let temp = data;
-        //fire event saying data is complete
-        this.addItemToLocalStorage(data[0]);
+        let temp = data[0];
+        let item = {date: Date.now(), name:temp.productname, weight:Math.random() * 300 + 200};
+        //fire event saying data is complete and add to local storage to save data
+        this.addItemToLocalStorage(item);
+        this.itemAdded.emit(item);
       }
     );
     return false;
@@ -28,7 +32,7 @@ export class ScannerComponent implements OnInit {
       if(!itemList){
         itemList = [];
       }
-      itemList.push({date: Date.now(), name:data.productname, weight:Math.random() * 300 + 200});
+      itemList.push();
       window.localStorage.setItem("itemList", JSON.stringify(itemList));
     }
   }
