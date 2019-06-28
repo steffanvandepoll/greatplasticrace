@@ -1,3 +1,9 @@
 .user-image{
     margin-right:16px;
 }
+
+em{
+    color:#0070ad;
+    font-weight:700;
+    margin-left:16px;
+}
