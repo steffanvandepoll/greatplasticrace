@@ -7,6 +7,7 @@ import { ScannerComponent } from './scanner/scanner.component';
 
 import { HeaderComponent } from './header/header.component';
 import { InfoBlockComponent } from './info-block/info-block.component';
+import { ProductListComponent } from './product-list/product-list.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { InfoBlockComponent } from './info-block/info-block.component';
     LoginComponent,
     ScannerComponent,
     HeaderComponent,
-    InfoBlockComponent
+    InfoBlockComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule
