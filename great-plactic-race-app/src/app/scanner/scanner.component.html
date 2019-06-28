@@ -2,8 +2,11 @@
   <form class="form-inline">
     <div class="form-group  mx-sm-3  mb-2">
       <label for="product-ean" class="sr-only">Fill in product code</label>
-      <input type="text" class="form-control" id="product-ean" placeholder="x xxxx xxxx xxxx">
+      <input name="upc" #upc type="text" class="form-control" id="product-ean" placeholder="x xxxx xxxx xxxx">
     </div>
-    <button type="submit" class="btn btn-primary mb-2" (click)="scanProduct()">Add Product</button>
+    <button type="submit" class="btn btn-primary mb-2" (click)="scanProduct(upc.value)">Add Product</button>
   </form>
+</div>
+<div class="text">
+  <p>(example: Right now use this barcodes to test 012000809941, 4015600169381)</p>
 </div>

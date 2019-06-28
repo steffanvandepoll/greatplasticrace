@@ -10,8 +10,8 @@ export class ScannerComponent implements OnInit {
   constructor(private restService: RestService) {}
   ngOnInit() {
   }
-  scanProduct() {
-    this.restService.getProductInformation('075720000814')
+  scanProduct(upcCode) {
+    this.restService.getProductInformation(upcCode)
     .subscribe(
       data=> {
         let temp = data;
