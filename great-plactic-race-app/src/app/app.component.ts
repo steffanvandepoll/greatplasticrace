@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RestService } from './rest.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'great-plactic-race-app';
+  constructor(private restService: RestService) {
+  }
+  ngOnInit() {
+    this.restService.getProductInformation();
+  }
 }
