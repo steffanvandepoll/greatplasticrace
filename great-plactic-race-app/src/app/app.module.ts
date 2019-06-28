@@ -12,6 +12,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { RestService } from './rest.service';
+import { LoggedInPageComponent } from './logged-in-page/logged-in-page.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { RestService } from './rest.service';
     ScannerComponent,
     HeaderComponent,
     InfoBlockComponent,
-    ProductListComponent
+    ProductListComponent,
+    LoggedInPageComponent
   ],
   imports: [
     BrowserModule,

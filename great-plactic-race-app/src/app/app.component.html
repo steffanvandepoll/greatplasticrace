@@ -1,8 +1,9 @@
 <app-header (loginAttempt)="showLoginInput($event)"></app-header>
 <div class="container">
-  <h1>GREAT PLASTIC RACE</h1>
-  <app-product-list></app-product-list>
-  <app-login *ngIf="loginVisible" (loginDone)="showScanner($event)"></app-login>
-  <app-scanner *ngIf="scannerVisible"></app-scanner>
-  <app-info-block *ngIf="!scannerVisible"></app-info-block>
+  <h1>GREAT PLASTIC RACE</h1>  
+  <app-login *ngIf="loginVisible" (loginDone)="showLoggedInPage($event)"></app-login>
+  <div *ngIf="loggedIn">
+    <app-logged-in-page></app-logged-in-page>
+  </div>  
+  <app-info-block *ngIf="!loggedIn"></app-info-block>
 </div>

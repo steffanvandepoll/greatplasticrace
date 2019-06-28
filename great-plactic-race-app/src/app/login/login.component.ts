@@ -8,8 +8,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class LoginComponent implements OnInit {
   @Output() loginDone: EventEmitter<any> = new EventEmitter();
 
-  email;
-  password;
+  email: string;
+  password: string;
   hasError = false;
   constructor() { }
 

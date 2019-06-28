@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {  
   loginVisible = false;
-  scannerVisible = false;
+  loggedIn = false;
   title = 'great-plactic-race-app';
   constructor() {
   }
@@ -16,8 +16,8 @@ export class AppComponent {
     this.loginVisible = true;
   }
 
-  showScanner(){
+  showLoggedInPage(){
     this.loginVisible = false;
-    this.scannerVisible = true;
+    this.loggedIn = true;
   }
 }
