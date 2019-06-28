@@ -21,5 +21,14 @@
       <td></td>
       <td>{{totalWeight / 1000}}kg</td>
     </tr>
+    <tr>
+      <td>Company total: </td>
+      <td></td>
+      <td>{{companyTotalWeight / 1000}}kg</td>
+    </tr>
   </tfoot>
 </table>
+
+<p>
+  Your contribution to the total amount of recycled plastic is about <strong>{{(totalWeight / companyTotalWeight) * 100 | number:'2.1-3'}}%</strong>. Not bad!! Keep it up.
+</p>

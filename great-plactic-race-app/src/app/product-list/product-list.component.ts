@@ -9,6 +9,7 @@ export class ProductListComponent implements OnInit {
 
   itemList;
   totalWeight;
+  companyTotalWeight = 983456;
 
   constructor() {
     this.itemList = JSON.parse(window.localStorage.getItem("itemList"));
