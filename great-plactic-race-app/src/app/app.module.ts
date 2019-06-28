@@ -12,7 +12,7 @@ import { InfoBlockComponent } from './info-block/info-block.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    ScannerComponent
+    ScannerComponent,
     HeaderComponent,
     InfoBlockComponent
   ],
