@@ -9,3 +9,7 @@
 .table tfoot td{
   font-weight: bold;
 }
+
+p{
+  margin-bottom: 50px;
+}
