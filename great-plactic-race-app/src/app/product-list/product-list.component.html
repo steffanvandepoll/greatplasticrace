@@ -7,20 +7,11 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">06-28-2019</th>
-      <td>Cola bottle 1,5 liters</td>
-      <td>52.2g</td>
-    </tr>
-    <tr>
-      <th scope="row">06-28-2019</th>
-      <td>Cola bottle 1,5 liters</td>
-      <td>52.2g</td>
-    </tr>
-    <tr>
-      <th scope="row">06-28-2019</th>
-      <td>Cola bottle 1,5 liters</td>
-      <td>52.2g</td>
+
+    <tr *ngFor="let item of itemList">
+      <td>{{item.date}}</td>
+      <td>{{item.name}}</td>
+      <th>{{item.weight}}</th>
     </tr>
   </tbody>
 
@@ -28,7 +19,7 @@
     <tr>
       <td>Total saved: </td>
       <td></td>
-      <td>156.6g</td>
+      <td>{{totalWeight / 1000}}kg</td>
     </tr>
   </tfoot>
 </table>
