@@ -11,6 +11,11 @@ export class AppComponent {
   constructor(private restService: RestService) {
   }
   ngOnInit() {
-    this.restService.getProductInformation();
+    this.restService.getProductInformation()
+    .subscribe(
+      data=> {
+        let temp = data;
+      }
+    );
   }
 }
