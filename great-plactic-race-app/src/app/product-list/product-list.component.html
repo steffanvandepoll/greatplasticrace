@@ -9,9 +9,9 @@
   <tbody>
 
     <tr *ngFor="let item of itemList">
-      <td>{{item.date}}</td>
+      <td class="hidden-xs">{{item.date | date}}</td>
       <td>{{item.name}}</td>
-      <th>{{item.weight}}</th>
+      <th>{{item.weight | number:'1.0-0'}}</th>
     </tr>
   </tbody>
 
@@ -19,12 +19,12 @@
     <tr>
       <td>Total saved: </td>
       <td></td>
-      <td>{{totalWeight / 1000}}kg</td>
+      <td>{{totalWeight / 1000 | number:'1.1-1'}}kg</td>
     </tr>
     <tr>
       <td>Company total: </td>
       <td></td>
-      <td>{{companyTotalWeight / 1000}}kg</td>
+      <td>{{companyTotalWeight / 1000 | number:'1.1-1'}}kg</td>
     </tr>
   </tfoot>
 </table>

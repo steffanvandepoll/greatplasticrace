@@ -15,9 +15,21 @@ export class ScannerComponent implements OnInit {
     .subscribe(
       data=> {
         let temp = data;
-        console.log(data);
+        //fire event saying data is complete
+        this.addItemToLocalStorage(data[0]);
       }
     );
     return false;
+  }
+
+  addItemToLocalStorage(data){
+    if(data){
+      let itemList:any[] = JSON.parse(window.localStorage.getItem("itemList"));
+      if(!itemList){
+        itemList = [];
+      }
+      itemList.push({date: Date.now(), name:data.productname, weight:Math.random() * 300 + 200});
+      window.localStorage.setItem("itemList", JSON.stringify(itemList));
+    }
   }
 }

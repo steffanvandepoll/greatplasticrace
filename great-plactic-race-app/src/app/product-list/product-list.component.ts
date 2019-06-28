@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductListComponent implements OnInit {
 
-  itemList;
-  totalWeight;
-  companyTotalWeight = 983456;
+  itemList:any[];
+  totalWeight:number;
+  companyTotalWeight:number = 983456;
 
   constructor() {
     this.itemList = JSON.parse(window.localStorage.getItem("itemList"));
@@ -28,9 +28,9 @@ export class ProductListComponent implements OnInit {
   initListIfEmpty(){
     let list = [];
 
-    let item1 = {date:"06-28-2019", name:"Coca Cola bottle 1,5L", weight:432};
-    let item2 = {date:"06-28-2019", name:"Coca Cola bottle 1,5L", weight:345};
-    let item3 = {date:"06-28-2019", name:"Coca Cola bottle 1,5L", weight:185};
+    let item1 = {date: Date.now(), name:"Coca Cola bottle 1,5L", weight:432};
+    let item2 = {date: Date.now(), name:"Coca Cola bottle 1,5L", weight:345};
+    let item3 = {date: Date.now(), name:"Coca Cola bottle 1,5L", weight:185};
 
     window.localStorage.setItem("itemList", JSON.stringify([item1, item2, item3]));
   }
