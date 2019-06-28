@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -6,10 +6,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  @Output() loginDone: EventEmitter<any> = new EventEmitter();
 
+  email;
+  password;
+  hasError = false;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  validateUser(){
+    if(this.email === 'user@gmail.com' && this.password==='admin'){
+      this.loginDone.emit(this.email);
+      this.hasError = false;
+    }else{
+      this.hasError = true;
+    }
+
   }
 
 }

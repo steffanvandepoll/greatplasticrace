@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  @Output() loginAttempt: EventEmitter<any> = new EventEmitter();
+  loginState = 'Log in'
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toggle(){
+    this.loginAttempt.emit();
+    this.loginState = 'Log out'
   }
 
 }

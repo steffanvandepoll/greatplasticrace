@@ -5,9 +5,9 @@
       Great plastic race!
     </a>
     <div>        
-        <button class="btn primary-btn">
+        <button class="btn primary-btn" (click)="toggle()">
             <img src="../assets/user-icon.png" width="30" height="30" class="d-inline-block align-top user-image" alt="">
-            <span>Login</span>
+            <span>{{loginState}}</span>
         </button>
     </div>
 </nav>
