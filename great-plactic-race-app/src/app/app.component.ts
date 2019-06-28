@@ -11,10 +11,11 @@ export class AppComponent {
   constructor(private restService: RestService) {
   }
   ngOnInit() {
-    this.restService.getProductInformation()
+    this.restService.getProductInformation('8713439221251')
     .subscribe(
       data=> {
         let temp = data;
+        console.log(data);
       }
     );
   }
