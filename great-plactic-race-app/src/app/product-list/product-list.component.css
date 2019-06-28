@@ -1,0 +1,11 @@
+.table{
+  margin-top: 50px;
+}
+
+.table .thead-dark th{
+  background-color: #0070ad;
+  border-color: #0070ad;
+}
+.table tfoot td{
+  font-weight: bold;
+}
